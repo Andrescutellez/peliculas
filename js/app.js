@@ -1,5 +1,3 @@
-import { shows } from "./data.js";
-
 const TYPE_LABELS = {
   pelicula: "Pelicula",
   serie: "Serie",
@@ -8,7 +6,8 @@ const TYPE_LABELS = {
 
 const COMMENTS_STORAGE_KEY = "streaming-en-linea-comments";
 const collator = new Intl.Collator("es", { sensitivity: "base" });
-const catalog = [...shows].sort((left, right) => right.anio - left.anio || collator.compare(left.titulo, right.titulo));
+const sourceShows = Array.isArray(window.shows) ? window.shows : [];
+const catalog = [...sourceShows].sort((left, right) => right.anio - left.anio || collator.compare(left.titulo, right.titulo));
 
 const state = {
   search: "",

@@ -1,4 +1,4 @@
-export const shows = [
+const shows = [
   {
     id: 1,
     titulo: "Capitan America: El primer vengador",
@@ -532,3 +532,5 @@ export const shows = [
     descripcion: "La primera familia de Marvel entra al UCM con una propuesta retrofuturista que apuesta por la exploracion, la ciencia y la dinamica de equipo."
   }
 ];
+
+window.shows = shows;
